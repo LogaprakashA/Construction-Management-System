@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Construction Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="toggleSidebar()">☰</button>
+        <div id="sidebarMenu">
+            <a href="home.html">Home</a>
+            <a href="order-history.html">Order History</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="order-history-container">
+        <h1>Order History</h1>
+        <div class="order-history-list">
+            <div class="order-card">
+                <h2>Sand</h2>
+                <p>Quantity: 10 tons</p>
+                <p>Total: ₹5000</p>
+                <p>Delivery Date: 2025-03-25</p>
+                <p>Payment: UPI</p>
+            </div>
+            <div class="order-card">
+                <h2>Cement</h2>
+                <p>Quantity: 20 bags</p>
+                <p>Total: ₹8000</p>
+                <p>Delivery Date: 2025-03-28</p>
+                <p>Payment: Card</p>
+            </div>
+            <!-- Add more dummy orders here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

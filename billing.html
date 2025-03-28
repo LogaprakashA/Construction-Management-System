@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Management System - Billing</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .billing-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .billing-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .billing-container p {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .billing-container select {
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            width: 80%;
+        }
+
+        .billing-container button {
+            padding: 12px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .billing-container button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="billing-container">
+        <h2>Billing Details</h2>
+        <p id="product-info"></p>
+        <p id="qty-info"></p>
+        <p id="total-info"></p>
+        <p>Delivery Time: 7 - 10 working days</p>
+
+        <label>Select Payment Method:</label><br>
+        <select id="payment-method">
+            <option value="COD">Cash on Delivery (COD)</option>
+            <option value="UPI">UPI</option>
+            <option value="Card">Credit/Debit Card</option>
+        </select><br>
+
+        <button onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        const qty = urlParams.get('qty');
+        const total = urlParams.get('total');
+
+        const productMap = {
+            cement: "Cement",
+            sand: "Sand",
+            jelly: "Jelly Stones",
+            tmtbars: "TMT Bars"
+        };
+
+        document.getElementById('product-info').innerText = `Product: ${productMap[product]}`;
+        document.getElementById('qty-info').innerText = `Quantity: ${qty} units`;
+        document.getElementById('total-info').innerText = `Total Amount: ₹${total}`;
+
+        function confirmOrder() {
+            const payment = document.getElementById('payment-method').value;
+            alert(`Order Confirmed!\nPayment Method: ${payment}\nDelivery in 7-10 working days`);
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+
+</html>

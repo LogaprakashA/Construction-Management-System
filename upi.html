@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>UPI Payment</h2>
+        <form action="billing.html" method="post">
+            <p>Select UPI App:</p>
+            <label><input type="radio" name="upiApp" value="paytm" required> Paytm</label>
+            <img src="https://www.logo.wine/a/logo/Paytm/Paytm-Logo.wine.svg" alt="Paytm" class="small-icon">
+            <br>
+            <label><input type="radio" name="upiApp" value="phonepe" required> PhonePe</label>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/PhonePe_Logo.png" alt="PhonePe" class="small-icon">
+            <br><br>
+
+            <label>Enter UPI ID:</label>
+            <input type="text" name="upiId" placeholder="example@upi" required><br><br>
+
+            <button type="submit">Make Payment</button>
+        </form>
+    </div>
+</body>
+</html>

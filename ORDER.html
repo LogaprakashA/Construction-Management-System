@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Material</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Order Material</h2>
+        <p>Material: Cement</p>
+        <p>Price per unit: ₹500</p>
+        <form id="orderForm">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            <br><br>
+
+            <label for="paymentMethod">Select Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="">--Select--</option>
+                <option value="upi">UPI</option>
+                <option value="card">Card</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const payment = document.getElementById("paymentMethod").value;
+            if (payment === "upi") {
+                window.location.href = "upi.html";
+            } else if (payment === "card") {
+                window.location.href = "card.html";
+            } else {
+                alert("Please select a payment method.");
+            }
+        });
+    </script>
+</body>
+</html>
